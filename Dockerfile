@@ -4,6 +4,5 @@ WORKDIR /etc/config
 
 ADD eth_cnf.json .
 
-ln -s
 
 CMD ["geth"]
