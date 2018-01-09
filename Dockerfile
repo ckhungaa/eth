@@ -1,9 +1,8 @@
 FROM ethereum/client-go:v1.7.3
 
-WORKDIR /etc/config
-
-ADD eth_cnf.json .
+ADD eth_cnf.json /etc/config/eth_cnf.json
 
 RUN chmod +x /usr/local/bin/*
 
-CMD ["geth"]
+COPY ./docker-entrypoint.sh .
+ENTRYPOINT ["./docker-entrypoint.sh"]
